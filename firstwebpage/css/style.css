@@ -10,17 +10,52 @@ h1{
 }
 
 #myTitle{
-    color:blue
+    color:blue;
 }
 
 #myTitle{
-    color:orange
+    color:orange;
 }
 
 h6{
-    color:red
+    color:red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-align: center;
 }
 
 p{
-    color:rgb(100, 100, 200)
+    color:rgb(100, 100, 200);
+    font-family: 'Young Serif', serif;
+    font-size: 30px;
+}
+
+.myPara{
+    color:burlywood;
+    text-align: right;
+}
+
+.myPara2{
+    color: black;
+    text-align: center;
+}
+
+.allPara{
+    font-style: italic;
+    padding: 30px;
+}
+
+#myPara3{
+    color:grey;
+}
+
+a{
+    color:blue;
+    font-size: 30px;
+}
+
+img{
+    width: 800px;
+    height: 300px;
+    
 }
