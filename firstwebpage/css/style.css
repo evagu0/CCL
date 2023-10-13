@@ -1,0 +1,26 @@
+h1{
+    color:rgb(193, 156, 108);
+    background-color:black;
+    font-family:Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+#myTitle{
+    color:blue
+}
+
+#myTitle{
+    color:orange
+}
+
+h6{
+    color:red
+}
+
+p{
+    color:rgb(100, 100, 200)
+}
