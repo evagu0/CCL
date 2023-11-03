@@ -42,7 +42,7 @@ class Particle {
     push();
     translate(this.x, this.y);
 
-    circle(0, 0, this.dia);
+   // circle(0, 0, this.dia);
 
     pop();
   }
