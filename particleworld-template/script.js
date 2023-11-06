@@ -46,7 +46,7 @@ class Particle {
     if(this.y > height){
       this.x = random(width);
       this.y = height;
-      this.ySpd = -this.speed * 0.7
+      this.ySpd = -this.speed * 0.7;
     }
     
   }
