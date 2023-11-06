@@ -1,6 +1,6 @@
 // CCLab Mini Project - 9.R Particles Template
 
-let NUM_OF_PARTICLES = 3; // Decide the initial number of particles.
+let NUM_OF_PARTICLES = 100; // Decide the initial number of particles.
 
 let particles = [];
 
@@ -10,12 +10,12 @@ function setup() {
 
   // generate particles
   for (let i = 0; i < NUM_OF_PARTICLES; i++) {
-    particles[i] = new Particle(random(width), random(height));
+    particles[i] = new Particle(random(width), height);
   }
 }
 
 function draw() {
-  background(50);
+  background(0, 25);
 
   // update and display
   for (let i = 0; i < particles.length; i++) {
@@ -31,19 +31,33 @@ class Particle {
     // properties: particle's characteristics
     this.x = startX;
     this.y = startY;
-    this.dia = 30;
+    this.dia = 10;
+    this.speed = random(2, 5);
+    this.angle = random(two_pi);
+    this.xSpd = this.speed * cos(this.angle);
+    this.ySpd = this.speed * sin(this.angle);
   }
   // methods (functions): particle's behaviors
   update() {
-    // (add) 
+    this.x += this.xSpd;
+    this.y += this.ySpd;
+    this.ySpd += 0.1;
+    
+    if(this.y > height){
+      this.x = random(width);
+      this.y = height;
+      this.ySpd = -this.speed * 0.7
+    }
+    
   }
   display() {
     // particle's appearance
     push();
+    nostroke();
+    fill(random(255), random(255), random(255));
     translate(this.x, this.y);
 
-   // circle(0, 0, this.dia);
-
+    ellipse(0, 0, this.dia);
     pop();
   }
 }
