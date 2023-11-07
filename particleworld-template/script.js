@@ -6,7 +6,7 @@ let particles = [];
 
 function setup() {
   let canvas = createCanvas(600, 600);
-  canvas.parent("canvasWrapper");
+  //canvas.parent("canvasWrapper");
 
   // generate particles
   for (let i = 0; i < NUM_OF_PARTICLES; i++) {
@@ -33,7 +33,7 @@ class Particle {
     this.y = startY;
     this.dia = 10;
     this.speed = random(2, 5);
-    this.angle = random(two_pi);
+    this.angle = random(TWO_PI);
     this.xSpd = this.speed * cos(this.angle);
     this.ySpd = this.speed * sin(this.angle);
   }
@@ -45,7 +45,7 @@ class Particle {
     
     if(this.y > height){
       this.x = random(width);
-      this.y = height;
+      this.y = random(height);
       this.ySpd = -this.speed * 0.7;
     }
     
@@ -53,10 +53,9 @@ class Particle {
   display() {
     // particle's appearance
     push();
-    nostroke();
+    noStroke();
     fill(random(255), random(255), random(255));
     translate(this.x, this.y);
-
     ellipse(0, 0, this.dia);
     pop();
   }
