@@ -1,0 +1,47 @@
+#title{
+  /* background-color: blue;  */
+  border: solid black; 
+  /* set width to 50 precent of the viewport, it will cange dynamically */
+  width: 50%; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#banner{
+    background-color: red; 
+    border: solid black; 
+    width: 100%;
+    height: 300px;
+    /* relative position can set offsite from the box's origintal poisitoin */
+    position: relative; 
+
+}
+
+#nyu_banner{
+    /* the width here is taking 100% width of it's parent div container, not the entire viewport */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+#profile{
+    background-color: yellow;  
+    border: solid black; 
+    width: 200px;
+    height: 200px;
+    /* absolute position will find any parent container that is not static, and positioning absolutlly based on parent position  */
+    position: absolute;
+    top:70%;
+    left: 10%;
+
+
+}
+
+#mission{
+    background-color: rgb(249, 193, 202);  
+    border: solid black; 
+    width: 90%;
+    height: 600px;
+
+}

@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.box1{
+  background-color: antiquewhite;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 800px;
+  height: 150px;
+  font-size: 80px;
+
+  padding:30px;
+
+  margin-top: 50px ;
+  margin-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.container-landing-page {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+
+
+  /* Explore more with the flexbox properties! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-container {
+  background-color: lightgray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interface-container {
+  background-color: gray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FLEXBOX PROPERTIES */
+/* 
+flex-direction
+flex-wrap
+flex-flow
+justify-content
+align-items
+align-content
+*/
