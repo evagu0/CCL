@@ -1,15 +1,15 @@
 let stars = [];
-let particleShape = 'circle';
-let currentColor = [255,255,255]; 
- // color customization
-let r = [242,124,129];
-let o = [242,171,124]; 
-let y = [252,245,146]; 
-let g = [153,212,150]; 
-let b = [142,149,245];
-let p = [201,151,240]; 
-let e = [255,255,255]; 
-let k = [0]; 
+let particleShape = "circle";
+let currentColor = [255, 255, 255];
+// color customization
+let r = [242, 124, 129];
+let o = [242, 171, 124];
+let y = [252, 245, 146];
+let g = [153, 212, 150];
+let b = [142, 149, 245];
+let p = [201, 151, 240];
+let e = [255, 255, 255];
+let k = [0];
 
 let heartButton, flowerButton, diamondButton;
 
@@ -21,17 +21,17 @@ function setup() {
   }
 
   // buttons
-  heartButton = createButton('Heart');
+  heartButton = createButton("Heart");
   heartButton.position(20, height / 12);
-  heartButton.mousePressed(() => changeShape('heart'));
+  heartButton.mousePressed(() => changeShape("heart"));
 
-  flowerButton = createButton('Flower');
+  flowerButton = createButton("Flower");
   flowerButton.position(width / 3, height / 12);
-  flowerButton.mousePressed(() => changeShape('flower'));
+  flowerButton.mousePressed(() => changeShape("flower"));
 
-  diamondButton = createButton('Diamond');
+  diamondButton = createButton("Diamond");
   diamondButton.position((2 * width) / 3, height / 12);
-  diamondButton.mousePressed(() => changeShape('diamond'));
+  diamondButton.mousePressed(() => changeShape("diamond"));
 }
 
 function draw() {
@@ -64,9 +64,21 @@ function draw() {
   fill(255);
   textSize(16);
   textAlign(CENTER, CENTER);
-  text('Heart', heartButton.x + heartButton.width / 2, heartButton.y + heartButton.height / 2);
-  text('Flower', flowerButton.x + flowerButton.width / 2, flowerButton.y + flowerButton.height / 2);
-  text('Diamond', diamondButton.x + diamondButton.width / 2, diamondButton.y + diamondButton.height / 2);
+  text(
+    "Heart",
+    heartButton.x + heartButton.width / 2,
+    heartButton.y + heartButton.height / 2
+  );
+  text(
+    "Flower",
+    flowerButton.x + flowerButton.width / 2,
+    flowerButton.y + flowerButton.height / 2
+  );
+  text(
+    "Diamond",
+    diamondButton.x + diamondButton.width / 2,
+    diamondButton.y + diamondButton.height / 2
+  );
 
   // Update and display stars
   for (let star of stars) {
@@ -87,22 +99,27 @@ function changeShape(shape) {
     star.setShape(shape);
   }
 }
-
 function changeColor() {
-  if (mouseX < 90 && mouseY > 540) {
-    currentColor = r;
-  } else if (mouseX > 90 && mouseX < 180 && mouseY > 490) {
-    currentColor = o;
-  } else if (mouseX > 180 && mouseX < 270 && mouseY > 490) {
-    currentColor = y;
-  } else if (mouseX > 270 && mouseX < 360 && mouseY > 490) {
-    currentColor = g;
-  } else if (mouseX > 360 && mouseX < 450 && mouseY > 490) {
-    currentColor = b;
-  } else if (mouseX > 450 && mouseX < 540 && mouseY > 490) {
-    currentColor = p;
-  } else if (mouseX > 540 && mouseX < 630 && mouseY > 490) {
-    currentColor = e;
+  if (mouseY > height / 6) {
+    if (mouseX < 90) {
+      currentColor = r;
+    } else if (mouseX > 90 && mouseX < 180) {
+      currentColor = o;
+    } else if (mouseX > 180 && mouseX < 270) {
+      currentColor = y;
+    } else if (mouseX > 270 && mouseX < 360) {
+      currentColor = g;
+    } else if (mouseX > 360 && mouseX < 450) {
+      currentColor = b;
+    } else if (mouseX > 450 && mouseX < 540) {
+      currentColor = p;
+    } else if (mouseX > 540 && mouseX < 630 && mouseY > 490 && mouseY < 565) {
+      currentColor = e;
+    }
+
+    for (let star of stars) {
+      star.setColor(currentColor);
+    }
   }
 }
 
@@ -134,14 +151,20 @@ class Star {
   setShape(shape) {
     this.shape = shape;
   }
+  setColor(color) {
+    this.color = color;
+  }
 
   display() {
-    if (particleShape === 'flower') {
+    if (particleShape === "flower") {
       drawFlower(this.x, this.y, 5, 8, 10);
-    } else if (particleShape === 'heart') {
+      fill(currentColor[0], currentColor[1], currentColor[2]);
+    } else if (particleShape === "heart") {
       drawHeart(this.x, this.y, 10);
-    } else if (particleShape === 'diamond') {
+      fill(currentColor[0], currentColor[1], currentColor[2]);
+    } else if (particleShape === "diamond") {
       drawDiamond(this.x, this.y, 15);
+      fill(currentColor[0], currentColor[1], currentColor[2]);
     } else {
       noStroke();
       fill(currentColor[0], currentColor[1], currentColor[2]);
