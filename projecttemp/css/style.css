@@ -1,6 +1,6 @@
 html,
 body {
-  background-image: url('starbg.jpg');
+  background-image: url("https://wallpaperswide.com/download/stars_galaxies-wallpaper-2000x1333.jpg");
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -31,16 +31,16 @@ p {
   border-width: 5px;
   width: 800px;
   height: 100px;
-  font-size: 15px;
+  font-size: 16.5px;
+  font-family: cursive;
 
   padding:30px;
 
-  margin-top: 50px ;
+  margin-top: 50px;
   margin-bottom: 50px;
   margin-right: auto;
   margin-left: auto;
 
-  
 }
 
 .container-landing-page {
@@ -50,6 +50,7 @@ p {
   border-style: solid;
   border-width: 5px;
   border-color: black;
+  font-family: cursive;
 
   margin-top: 80px;
   margin-bottom: 100px;
@@ -98,7 +99,10 @@ p {
   justify-content: center;
   align-items: center;
 }
+.canvas{
+  margin: center;
 
+}
  .button{
   text-align: center;
   font-size: 50px;
